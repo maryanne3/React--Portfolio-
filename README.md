@@ -8,7 +8,7 @@ Portfolio built with React ;)
 3. [Installation](#installation)
 4. [Technologies](#technologies)
 
-## Descrip[tion 
+## Description 
 
  ## Screenshots 
 
