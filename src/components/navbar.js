@@ -3,6 +3,9 @@ import React from 'react';
 import '../styles/Navbar.css';
 import {FaBars, FaTimes} from 'react-icons/fa'
 import logo from '../assets/img3.png'
+import classNames from 'classnames'; 
+
+
 
 // TODO: Create a styles object called "styles"
 
@@ -14,7 +17,7 @@ function Navbar() {
     <img src={logo} alt="Logo Image" style={{width:'100px'}}/>
    </div>
    <div>
-    <ul>
+    <ul className='flex'>
       <li>Home</li>
       <li>About</li>
       <li>Projects</li>
@@ -22,6 +25,19 @@ function Navbar() {
     </ul>
    </div>
 
+   <div className='hidden'>
+    <FaBars/>
+   </div>
+
+   <ul className='hidden'>
+      <li>Home</li>
+      <li>About</li>
+      <li>Projects</li>
+      <li>Contact</li>
+   </ul>
+    {/* Social Icons*/}
+   <div className='hidden'></div>
+  
    </div>
   );
 }
