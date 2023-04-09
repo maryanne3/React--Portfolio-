@@ -1,19 +1,23 @@
-import React from "react";
-import About from "./components/about";
-import Contact from "./components/contact";
-import Navbar from "./components/navbar";
-import Projects from "./components/projects";
+import Header from "./components/Header";
+import Routes from "./components/Routes";
 
 
 function App() {
-  return ( 
-    <main>
-      <Navbar />
-      <About/>
-      <Projects/>
-      <Contact/>
-    </main>
+  const personalDetails = {
+    name: "Maryan.A",
+    location: "United Kingdom",
+    email: "maryanne@outlook.com",
+    availability: "For Hire!",
+  };
+
+  return (
+    <>
+      <Header />
+      <Routes personalDetails={personalDetails} />
+    </>
   );
 }
+
+
 
 export default App;

@@ -1,45 +1,36 @@
-import React from 'react';
-// Here we import the Navbar.css file to grant access to some additional classNames
-import '../styles/Navbar.css';
-import {FaBars, FaTimes} from 'react-icons/fa'
-import logo from '../assets/img3.png'
-import classNames from 'classnames'; 
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
+import openMenu from "../images/open.svg";
+import closeMenu from "../images/close.svg";
 
-
-// TODO: Create a styles object called "styles"
-
-function Navbar() {
-  // TODO: Add a style attribute to `nav`
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-   <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-black text-gray-300'>
-   <div>
-    <img src={logo} alt="Logo Image" style={{width:'100px'}}/>
-   </div>
-   <div>
-    <ul className='flex'>
-      <li>Home</li>
-      <li>About</li>
-      <li>Projects</li>
-      <li>Contact</li>
-    </ul>
-   </div>
-
-   <div className='hidden'>
-    <FaBars/>
-   </div>
-
-   <ul className='hidden'>
-      <li>Home</li>
-      <li>About</li>
-      <li>Projects</li>
-      <li>Contact</li>
-   </ul>
-    {/* Social Icons*/}
-   <div className='hidden'></div>
-  
-   </div>
+    <>
+      <button className="dropdown-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        {isMenuOpen ? (
+          <img className="closeMenu" src={closeMenu} alt="Close" />
+        ) : (
+          <img className="openMenu" src={openMenu} alt="Open" />
+        )}
+      </button>
+      <nav className={`links ${isMenuOpen ? "open" : "closed"}`}>
+        <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
+          Home
+        </NavLink>
+        <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
+          About
+        </NavLink>
+        <NavLink to="/portfolio" onClick={() => setIsMenuOpen(false)}>
+          Portfolio
+        </NavLink>
+        <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
+          Contact
+        </NavLink>
+      </nav>
+    </>
   );
-}
+};
 
 export default Navbar;
